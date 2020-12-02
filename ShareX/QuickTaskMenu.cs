@@ -48,6 +48,7 @@ namespace ShareX
                 if (e.KeyCode == Keys.Escape)
                 {
                     cms.Close();
+                    cms.Dispose();
                 }
             };
 
@@ -57,6 +58,7 @@ namespace ShareX
             {
                 cms.Close();
                 OnTaskInfoSelected(null);
+                cms.Dispose();
             };
             cms.Items.Add(tsmiContinue);
 
@@ -75,6 +77,7 @@ namespace ShareX
                             QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
                             cms.Close();
                             OnTaskInfoSelected(selectedTaskInfo);
+                            cms.Dispose();
                         };
                         cms.Items.Add(tsmi);
                     }
@@ -95,6 +98,7 @@ namespace ShareX
             {
                 cms.Close();
                 new QuickTaskMenuEditorForm().ShowDialog();
+                cms.Dispose();
             };
             cms.Items.Add(tsmiEdit);
 
